@@ -271,7 +271,7 @@ function SuggestionPopover<T extends SuggestionItem>({
 function checkMentionExists(editor: Editor, label: string): boolean {
   if (!editor.state?.doc) return false;
   let exists = false;
-  editor.state.doc.descendants((node) => {
+  editor.state.doc.descendants((node: { type: { name: string }; attrs: { label?: string } }) => {
     if (node.type.name === "mention") {
       const mentionLabel = node.attrs.label as string;
       if (mentionLabel === label) {
@@ -506,7 +506,7 @@ function getTextWithResourceURIs(editor: Editor | null): {
   let text = "";
   const resourceNames: Record<string, string> = {};
 
-  editor.state.doc.descendants((node) => {
+  editor.state.doc.descendants((node: { type: { name: string }; attrs: { id?: string; label?: string }; textContent?: string; isText?: boolean; text?: string }) => {
     if (node.type.name === "mention") {
       const id = node.attrs.id ?? "";
       const label = node.attrs.label ?? "";
@@ -712,7 +712,7 @@ export const TextEditor = React.forwardRef<TamboEditor, TextEditorProps>(
             className,
           ),
         },
-        handlePaste: (_view, event) => {
+        handlePaste: (_view: unknown, event: ClipboardEvent) => {
           const { imageItems, hasText } = getImageItems(event.clipboardData);
 
           if (imageItems.length === 0) return false;
@@ -733,7 +733,7 @@ export const TextEditor = React.forwardRef<TamboEditor, TextEditorProps>(
 
           return !hasText;
         },
-        handleKeyDown: (_view, event) => {
+        handleKeyDown: (_view: unknown, event: KeyboardEvent) => {
           const anyMenuOpen = resourceState.isOpen || promptState.isOpen;
 
           if (anyMenuOpen) return false;
@@ -780,7 +780,7 @@ export const TextEditor = React.forwardRef<TamboEditor, TextEditorProps>(
         hasMention: (id: string) => {
           if (!editor.state?.doc) return false;
           let exists = false;
-          editor.state.doc.descendants((node) => {
+          editor.state.doc.descendants((node: { type: { name: string }; attrs: { id?: string } }) => {
             if (node.type.name === "mention") {
               const mentionId = node.attrs.id as string;
               if (mentionId === id) {
