@@ -1,7 +1,7 @@
 # 🛍️ ShopFlow - AI-Powered E-Commerce Experience
 
 <div align="center">
-  <img src="public/shopflow-banner.svg" alt="ShopFlow Banner" width="600"/>
+  <!-- <img src="public/shopflow-banner.svg" alt="ShopFlow Banner" width="600"/> -->
   
   [![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js%2015-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
   [![Powered by Tambo](https://img.shields.io/badge/Powered%20by-Tambo%20AI-blue?style=for-the-badge)](https://tambo.ai)
@@ -57,90 +57,53 @@ ShopFlow introduces a **conversational commerce paradigm** where users can:
 ---
 
 ## 📁 Project Structure
+
+```bash
 shopflow/
-├── public/                          # Static assets
+├── public/
 │   ├── shopflow-banner.svg
 │   ├── Octo-Icon.svg
 │   └── Tambo-Lockup.svg
 │
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx               # Root layout with providers
-│   │   ├── page.tsx                 # Landing page
-│   │   ├── globals.css              # Global styles & theme
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
 │   │   ├── favicon.ico
-│   │   │
-│   │   ├── chat/                    # 🤖 AI Chat Interface
-│   │   │   └── page.tsx             # Main chat page with AI assistant
-│   │   │
-│   │   ├── products/                # 🛍️ Products Catalog
-│   │   │   └── page.tsx             # Browse all products
-│   │   │
-│   │   └── interactables/           # Interactive components demo
+│   │   ├── chat/
+│   │   │   └── page.tsx
+│   │   ├── products/
+│   │   │   └── page.tsx
+│   │   └── interactables/
 │   │       ├── page.tsx
 │   │       └── components/
 │   │           └── settings-panel.tsx
 │   │
 │   ├── components/
-│   │   ├── common/                  # 🔧 Shared Components
-│   │   │   ├── header.tsx           # Navigation header
-│   │   │   ├── footer.tsx           # Site footer
-│   │   │   └── theme-toggle.tsx     # Dark/light mode toggle
-│   │   │
-│   │   ├── landing/                 # 🏠 Landing Page Components
-│   │   │   ├── hero-section.tsx     # Hero with CTA
-│   │   │   ├── features-section.tsx # Feature highlights
-│   │   │   ├── demo-section.tsx     # Interactive demo
-│   │   │   └── cta-section.tsx      # Call to action
-│   │   │
-│   │   ├── tambo/                   # 🤖 AI-Renderable Components
-│   │   │   ├── product-card.tsx     # Single product display
-│   │   │   ├── product-grid.tsx     # Product grid with filters
-│   │   │   ├── product-filters.tsx  # Filter panel
-│   │   │   ├── product-details.tsx  # Detailed product view
-│   │   │   ├── product-comparison.tsx # Compare products
-│   │   │   ├── cart-widget.tsx      # Shopping cart
-│   │   │   ├── category-list.tsx    # Category navigation
-│   │   │   ├── price-range-slider.tsx # Price filter
-│   │   │   ├── search-results.tsx   # Search results
-│   │   │   ├── quick-stats.tsx      # Product statistics
-│   │   │   ├── message-thread-full.tsx
-│   │   │   ├── message-input.tsx
-│   │   │   ├── message.tsx
-│   │   │   ├── thread-container.tsx
-│   │   │   ├── thread-content.tsx
-│   │   │   ├── thread-history.tsx
-│   │   │   └── scrollable-message-container.tsx
-│   │   │
-│   │   ├── ui/                      # 🎨 Base UI Components
-│   │   │   └── card-data.tsx
-│   │   │
-│   │   └── ApiKeyCheck.tsx          # API key validation
+│   │   ├── common/
+│   │   │   ├── header.tsx
+│   │   │   ├── footer.tsx
+│   │   │   └── theme-toggle.tsx
+│   │   ├── landing/
+│   │   ├── tambo/
+│   │   │   ├── product/
+│   │   │   ├── filters/
+│   │   │   ├── cart/
+│   │   │   └── chat/
+│   │   └── ui/
 │   │
-│   ├── context/                     # 📦 React Context Providers
-│   │   ├── theme-provider.tsx       # Theme state management
-│   │   ├── cart-context.tsx         # Shopping cart state
-│   │   └── filter-context.tsx       # Filter state management
-│   │
-│   ├── services/                    # 🌐 API Services
-│   │   ├── fakestore-api.ts         # FakeStore API integration
-│   │   ├── types.ts                 # TypeScript interfaces
-│   │   └── population-stats.ts      # Stats utilities
-│   │
-│   └── lib/                         # 🛠️ Utilities
-│       ├── tambo.ts                 # Tambo AI configuration
-│       ├── thread-hooks.ts          # Custom hooks for threads
-│       └── utils.ts                 # Helper functions
+│   ├── context/
+│   ├── services/
+│   └── lib/
 │
-├── .env.local                       # Environment variables
-├── tailwind.config.ts               # Tailwind configuration
-├── next.config.ts                   # Next.js configuration
-├── tsconfig.json                    # TypeScript configuration
-├── package.json                     # Dependencies
-└── README.md                        # Documentation
+├── .env.local
+├── next.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+├── package.json
+└── README.md
 
-
----
 
 ## 🛠️ Tech Stack
 
