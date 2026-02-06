@@ -1,131 +1,145 @@
-# Tambo Template
+# 🛍️ ShopFlow - AI-Powered E-Commerce Experience
 
-This is a starter NextJS app with Tambo hooked up to get your AI app development started quickly.
+<div align="center">
+  <img src="public/shopflow-banner.svg" alt="ShopFlow Banner" width="600"/>
+  
+  [![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js%2015-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+  [![Powered by Tambo](https://img.shields.io/badge/Powered%20by-Tambo%20AI-blue?style=for-the-badge)](https://tambo.ai)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://typescriptlang.org)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+</div>
 
-## Get Started
+---
 
-1. Run `npm create-tambo@latest my-tambo-app` for a new project
+## 🚀 Overview
 
-2. `npm install`
+**ShopFlow** revolutionizes online shopping by combining the power of conversational AI with a stunning e-commerce interface. Simply describe what you're looking for, and watch as our AI assistant dynamically renders personalized product recommendations, applies filters, and helps you discover exactly what you need.
 
-3. `npx tambo init`
+### 🎯 The Problem
 
-- or rename `example.env.local` to `.env.local` and add your tambo API key you can get for free [here](https://tambo.co/dashboard).
+Traditional e-commerce platforms force users through rigid navigation patterns, endless filtering options, and overwhelming product catalogs. Finding the right product often feels like searching for a needle in a haystack.
 
-4. Run `npm run dev` and go to `localhost:3000` to use the app!
+### 💡 Our Solution
 
-## Customizing
+ShopFlow introduces a **conversational commerce paradigm** where users can:
+- Describe what they want in natural language
+- Get AI-rendered product grids tailored to their needs
+- Apply complex filters through simple conversation
+- Receive personalized recommendations based on context
 
-### Change what components tambo can control
+---
 
-You can see how components are registered with tambo in `src/lib/tambo.ts`:
+## ✨ Features
 
-```tsx
-export const components: TamboComponent[] = [
-  {
-    name: "Graph",
-    description:
-      "A component that renders various types of charts (bar, line, pie) using Recharts. Supports customizable data visualization with labels, datasets, and styling options.",
-    component: Graph,
-    propsSchema: graphSchema,
-  },
-  // Add more components here
-];
-```
+### 🤖 AI-Powered Shopping Assistant
+- **Natural Language Queries**: "Show me electronics under $100" or "Find me a stylish jacket"
+- **Dynamic UI Rendering**: AI generates and renders product components in real-time
+- **Context-Aware Responses**: Remembers your preferences throughout the session
 
-You can install the graph component into any project with:
+### 🎨 Beautiful, Modern UI
+- **Glassmorphism Design**: Stunning frosted glass effects
+- **Dark/Light Mode**: Seamless theme switching with smooth transitions
+- **Responsive Layout**: Perfect experience on any device
+- **Micro-Animations**: Delightful hover effects and transitions
+
+### 🛒 Full E-Commerce Functionality
+- **Product Catalog**: Browse 20+ products across 4 categories
+- **Smart Filtering**: Category, price range, rating, and search
+- **Shopping Cart**: Add, remove, and manage items
+- **Real-time Updates**: Instant UI updates without page refresh
+
+### 🔧 Technical Excellence
+- **Type-Safe**: Full TypeScript implementation
+- **Component Registration**: Tambo-powered AI component rendering
+- **API Integration**: FakeStore API for realistic product data
+- **State Management**: React Context for global state
+
+---
+
+## 📁 Project Structure
+shopflow/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # Landing page
+│   │   ├── layout.tsx            # Root layout
+│   │   ├── dashboard/
+│   │   │   └── page.tsx          # AI Chat dashboard
+│   │   └── products/
+│   │       └── page.tsx          # Products catalog
+│   ├── components/
+│   │   ├── landing/              # Landing page components
+│   │   ├── dashboard/            # Dashboard components
+│   │   ├── common/               # Shared components
+│   │   ├── tambo/                # AI-renderable components
+│   │   └── ui/                   # Base UI components
+│   ├── context/                  # React Context providers
+│   ├── services/                 # API services
+│   └── lib/                      # Utilities & Tambo config
+├── public/                       # Static assets
+└── ...config files
+
+
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Next.js 15** | React framework with App Router |
+| **Tambo AI** | Conversational AI & component rendering |
+| **TypeScript** | Type-safe development |
+| **Tailwind CSS 4** | Utility-first styling |
+| **FakeStore API** | Product data source |
+| **React Context** | State management |
+| **Lucide Icons** | Beautiful iconography |
+
+---
+
+## 📦 Installation
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Tambo API key
+
+### Quick Start
 
 ```bash
-npx tambo add graph
-```
+# Clone the repository
+git clone https://github.com/yourusername/shopflow.git
+cd shopflow
 
-The example Graph component demonstrates several key features:
+# Install dependencies
+npm install
 
-- Different prop types (strings, arrays, enums, nested objects)
-- Multiple chart types (bar, line, pie)
-- Customizable styling (variants, sizes)
-- Optional configurations (title, legend, colors)
-- Data visualization capabilities
+# Set up environment variables
+cp example.env.local .env.local
+# Add your TAMBO_API_KEY to .env.local
 
-Update the `components` array with any component(s) you want tambo to be able to use in a response!
+# Run the development server
+npm run dev
 
-You can find more information about the options [here](https://docs.tambo.co/concepts/generative-interfaces/generative-components)
 
-### Add tools for tambo to use
+Example Queries
+text
 
-Tools are defined with `inputSchema` and `outputSchema`:
+"Show me all electronics"
+"Find products under $50"
+"I need a men's jacket with good ratings"
+"Compare the top-rated jewelry items"
+"Add the cheapest laptop to my cart"
 
-```tsx
-export const tools: TamboTool[] = [
-  {
-    name: "globalPopulation",
-    description:
-      "A tool to get global population trends with optional year range filtering",
-    tool: getGlobalPopulationTrend,
-    inputSchema: z.object({
-      startYear: z.number().optional(),
-      endYear: z.number().optional(),
-    }),
-    outputSchema: z.array(
-      z.object({
-        year: z.number(),
-        population: z.number(),
-        growthRate: z.number(),
-      }),
-    ),
-  },
-];
-```
+🤝 Contributing
+We welcome contributions! Please see our Contributing Guide for details.
 
-Find more information about tools [here.](https://docs.tambo.co/concepts/tools)
+🙏 Acknowledgments
+Tambo AI for the incredible AI platform
+FakeStore API for product data
+Lucide for beautiful icons
+Tailwind CSS for styling utilities
 
-### The Magic of Tambo Requires the TamboProvider
 
-Make sure in the TamboProvider wrapped around your app:
-
-```tsx
-...
-<TamboProvider
-  apiKey={process.env.NEXT_PUBLIC_TAMBO_API_KEY!}
-  components={components} // Array of components to control
-  tools={tools} // Array of tools it can use
->
-  {children}
-</TamboProvider>
-```
-
-In this example we do this in the `Layout.tsx` file, but you can do it anywhere in your app that is a client component.
-
-### Voice input
-
-The template includes a `DictationButton` component using the `useTamboVoice` hook for speech-to-text input.
-
-### MCP (Model Context Protocol)
-
-The template includes MCP support for connecting to external tools and resources. You can use the MCP hooks from `@tambo-ai/react/mcp`:
-
-- `useTamboMcpPromptList` - List available prompts from MCP servers
-- `useTamboMcpPrompt` - Get a specific prompt
-- `useTamboMcpResourceList` - List available resources
-
-See `src/components/tambo/mcp-components.tsx` for example usage.
-
-### Change where component responses are shown
-
-The components used by tambo are shown alongside the message response from tambo within the chat thread, but you can have the result components show wherever you like by accessing the latest thread message's `renderedComponent` field:
-
-```tsx
-const { thread } = useTambo();
-const latestComponent =
-  thread?.messages[thread.messages.length - 1]?.renderedComponent;
-
-return (
-  <div>
-    {latestComponent && (
-      <div className="my-custom-wrapper">{latestComponent}</div>
-    )}
-  </div>
-);
-```
-
-For more detailed documentation, visit [Tambo's official docs](https://docs.tambo.co).
+Authors & Team 
+Team name :- Uizards
+authors :- Pratik Dubey , Aryan Tripathi

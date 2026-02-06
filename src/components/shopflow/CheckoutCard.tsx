@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ShoppingCart, CreditCard, Check, Loader2 } from "lucide-react";
 import { useShopStore } from "@/store/useShopStore";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface CheckoutCardProps {
   productId?: number;

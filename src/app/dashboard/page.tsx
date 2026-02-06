@@ -19,8 +19,8 @@ import {
 import { useRouter } from "next/navigation";
 import { useShopStore } from "@/store/useShopStore";
 import { useProducts } from "@/hooks/useProducts";
-import { Button } from "@/components/ui/Button";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Notifications } from "@/components/Notifications";
 
 // Import ShopFlow components for fallback/demo rendering

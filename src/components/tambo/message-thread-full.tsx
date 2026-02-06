@@ -34,7 +34,7 @@ import { useMergeRefs } from "@/lib/thread-hooks";
 import type { Suggestion } from "@tambo-ai/react";
 import type { VariantProps } from "class-variance-authority";
 import * as React from "react";
-import { CustomThreadSidebar, TamboSidebar } from "@/components/custom/custom-thread-sidebar";
+import { TamboSidebar } from "@/components/custom/custom-thread-sidebar";
 
 /**
  * Props for the MessageThreadFull component

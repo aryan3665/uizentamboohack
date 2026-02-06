@@ -4,8 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShoppingBag, Trash2, Plus, Minus, X } from "lucide-react";
 import { useShopStore } from "@/store/useShopStore";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function CartSummary() {
   const { cart, cartTotal, updateQuantity, removeFromCart, clearCart } = useShopStore();

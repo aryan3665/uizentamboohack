@@ -59,28 +59,16 @@ export function MinimalFooter() {
 
 	const socialLinks = [
 		{
-			icon: <FacebookIcon className="size-4" />,
-			link: '#',
-		},
-		{
 			icon: <GithubIcon className="size-4" />,
-			link: '#',
-		},
-		{
-			icon: <InstagramIcon className="size-4" />,
-			link: '#',
+			link: 'https://github.com/pratik-dubey/Shopflow',
 		},
 		{
 			icon: <LinkedinIcon className="size-4" />,
-			link: '#',
-		},
-		{
-			icon: <TwitterIcon className="size-4" />,
-			link: '#',
+			link: 'https://github.com/pratik-dubey/Shopflow',
 		},
 		{
 			icon: <YoutubeIcon className="size-4" />,
-			link: '#',
+			link: 'https://github.com/pratik-dubey/Shopflow',
 		},
 	];
 	return (
@@ -93,7 +81,7 @@ export function MinimalFooter() {
 							<Grid2X2Plus className="size-8" />
 						</a>
 						<p className="text-muted-foreground max-w-sm font-mono text-sm text-balance">
-							A comprehensive financial technology platform.
+							Your one stop solution for all your shopping needs !
 						</p>
 						<div className="flex gap-2">
 							{socialLinks.map((item, i) => (
@@ -142,7 +130,7 @@ export function MinimalFooter() {
 				<div className="bg-border absolute inset-x-0 h-px w-full" />
 				<div className="flex max-w-4xl flex-col justify-between gap-2 pt-2 pb-5">
 					<p className="text-muted-foreground text-center font-thin">
-						© <a href="https://x.com/sshahaider">sshahaider</a>. All rights
+						© <a href="https://www.linkedin.com/in/pratikdubey091/">pratikdubey091</a>. All rights
 						reserved {year}
 					</p>
 				</div>

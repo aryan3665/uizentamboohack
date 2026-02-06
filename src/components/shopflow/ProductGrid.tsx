@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Star, Loader2, Package, GitCompare } from "lucide-react";
 import { useShopStore, Product } from "@/store/useShopStore";
 import { useProducts } from "@/hooks/useProducts";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 interface ProductGridProps {
   category?: string;

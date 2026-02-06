@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { DollarSign, Filter, RotateCcw } from "lucide-react";
 import { useShopStore } from "@/store/useShopStore";
 import { useProducts } from "@/hooks/useProducts";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface PriceFilterProps {
   initialMax?: number;

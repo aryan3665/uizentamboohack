@@ -4,8 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star, ShoppingCart, GitCompare, Trophy, X } from "lucide-react";
 import { useShopStore, Product } from "@/store/useShopStore";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface ComparisonTableProps {
   showTopRated?: boolean;
